@@ -1,0 +1,33 @@
+Column,Type,Description,Business_Relevance
+transaction_id,str,Unique transaction identifier,Primary key for transaction lookup
+customer_id,str,Unique customer identifier,Customer segmentation & profiling
+transaction_date,datetime,Date of transaction (standardized to datetime),Time-series trend analysis
+transaction_time,str,Time of transaction (HH:MM),Intraday pattern detection
+account_type,str,"Bank account type: Savings, Current, Salary, Fixed Deposit, NRI",Account-type behaviour comparison
+transaction_type,str,"Payment method: UPI, NEFT, RTGS, ATM_Withdrawal, etc.",Payment channel preference analysis
+transaction_amount,float,Transaction amount in Indian Rupees (₹),Revenue metrics & transaction sizing
+transaction_direction,str,Direction of money flow: Credit (in) or Debit (out),Cash-flow analysis
+account_balance,float,Account balance after transaction (₹),Wealth segmentation
+merchant_category,str,Merchant category for the transaction,Spending pattern analysis
+state,str,Indian state where transaction occurred,Geographic market analysis
+credit_score,int,Customer credit score (300-900 scale),Credit risk assessment
+has_loan,int,"Binary flag: 1=has active loan, 0=no loan",Loan portfolio analysis
+loan_type,str,Type of loan (Home/Personal/Auto/Gold/Education/No Loan),Loan product mix analysis
+emi_amount,float,Monthly EMI amount in ₹; 0 if no loan,EMI burden analysis
+transaction_status,str,"Transaction outcome: Success, Failed, Pending",Transaction success rate KPI
+channel,str,"Transaction channel: Mobile_App, Web, ATM, Branch, API, etc.",Digital adoption metrics
+kyc_status,str,"KYC compliance status: Verified, Expired, Pending",Compliance & risk monitoring
+is_fraud,int,"Fraud flag: 1=fraudulent, 0=legitimate",Fraud rate KPI
+transaction_hour,int,Hour of day (0-23) when transaction occurred,Peak usage hours analysis
+year,int,[ENGINEERED] Year extracted from transaction_date,YoY growth analysis
+month,int,[ENGINEERED] Month number (1-12),Monthly trend & seasonality
+month_name,str,[ENGINEERED] Month abbreviated name (Jan-Dec),Dashboard labelling
+day_of_week,str,[ENGINEERED] Day of the week,Weekend vs weekday patterns
+quarter,int,[ENGINEERED] Calendar quarter (1-4),Quarterly business reporting
+time_of_day,str,[ENGINEERED] Time bucket: Morning/Afternoon/Evening/Night,Day-part marketing & ops planning
+credit_score_band,str,[ENGINEERED] Credit score band: Excellent/Good/Fair/Poor/Very Poor,Customer creditworthiness segmentation
+amount_category,str,[ENGINEERED] Transaction size category,Transaction volume tier analysis
+net_amount,float,"[ENGINEERED] Signed amount (positive=Credit, negative=Debit)",Net cash flow per transaction
+is_weekend,int,[ENGINEERED] 1 if transaction on Saturday or Sunday,Weekend transaction behaviour
+is_high_value,int,[ENGINEERED] 1 if amount >= 95th percentile (₹140857),High-value transaction monitoring
+is_amount_outlier,int,[ENGINEERED] 1 if amount is an IQR outlier,Data quality flagging
