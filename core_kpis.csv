@@ -1,0 +1,9 @@
+KPI,Formula,Value,Business_Rationale
+Total Transactions,COUNT(transaction_id),"550,000",Scale of operations
+Total Volume (₹),SUM(transaction_amount),"₹16,448,901,664",Total business processed
+Avg Transaction Value (₹),SUM(transaction_amount) / COUNT(transaction_id),"₹29,907.09",Ticket size monitoring
+Transaction Success Rate,COUNT(status=Success) / COUNT(*) × 100,92.04%,System reliability & customer trust
+Fraud Rate,COUNT(is_fraud=1) / COUNT(*) × 100,0.886%,Risk & compliance monitoring
+Failed+Reversed Rate,"COUNT(status ∈ {Failed,Reversed}) / COUNT(*) × 100",5.99%,Customer experience failure rate
+Loan Penetration Rate,COUNT(has_loan=1) / COUNT(*) × 100,34.96%,Cross-sell / product penetration
+Digital Channel Rate,"COUNT(channel ∈ {Mobile,Web,API}) / COUNT(*) × 100",66.91%,Digital transformation progress
